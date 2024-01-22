@@ -97,7 +97,7 @@ Qualquer outro pré-processamento foi realizado pelo autor do conjunto de dados.
 
 \subsection{Estatísticas Resumidas}
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{l c c c c c c c c}
   \toprule
@@ -132,15 +132,15 @@ Os \textit{scores} de validação cruzada foram calculados utilizando a métrica
 % introdudir a tabela de resultados
 De forma muito geral e facilmente comparativa os modelos de aprendizagem de máquina tiveram um desempenho bastante bom, disposto como se segue:
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{l c c c c}
   \toprule
-  Modelo         & Accuracy & Precisão (Macro Avg)  & Recall (Macro Avg) & F1-Score (Macro Avg) \\
+  Modelo         & Accuracy & Precisão  & Recall  & F1-Score \\
   \midrule
-  SVM            & 92.67\%  & 92.44\%               & 92.42\%            & 92.40\%             \\
-  Decision Tree  & 93.38\%  & 93.28\%               & 93.18\%            & 93.19\%             \\
-  Random Forest  & 94.33\%  & 95.22\%               & 94.17\%            & 94.27\%             \\
+  SVM            & 92.67\%  & 92.44\%   & 92.42\% & 92.40\%  \\
+  Decision Tree  & 93.38\%  & 93.28\%   & 93.18\% & 93.19\%  \\
+  Random Forest  & 94.33\%  & 95.22\%   & 94.17\% & 94.27\%  \\
   \bottomrule
   \end{tabular}
   \caption{Sumário dos Resultados dos Modelos de Aprendizagem de Máquina}
@@ -155,7 +155,7 @@ O modelo de Máquina de Vetores de Suporte (SVM) foi criado utilizando o SMO (Se
 
 Os resultados da validação estão dispostos na tabela\ref{tab:svm-results}.
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{l c c c c}
   \toprule
@@ -185,7 +185,7 @@ O modelo de Árvore de Decisão foi criado utilizando o J48 \cite{j48}. Este mod
 
 Os resultados da validação estão dispostos na tabela\ref{tab:decision-tree-results}.
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{l c c c c}
   \toprule
@@ -216,7 +216,7 @@ O modelo de Floresta Aleatória foi criado utilizando o Random Forest \cite{rand
 Os resultados da validação estão dispostos na tabela\ref{tab:random-forest-results}.
 
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{l c c c c}
   \toprule
@@ -244,7 +244,7 @@ Como podemos ver na tabela\ref{tab:random-forest-results}, o modelo de Floresta 
 
 A análise da importância dos atributos foi feita utilizando o Random Forest \cite{random-forest}. Este modelo foi escolhido porque é o melhor modelo de aprendizagem de máquina para este conjunto de dados, e porque é um modelo que consegue calcular a importância dos atributos. A importância dos atributos foi calculada utilizando o método de \textit{Mean Decrease Accuracy} \cite{mean-decrease-accuracy}.
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{l c}
   \toprule
@@ -272,14 +272,14 @@ Como podemos ver na tabela\ref{tab:importance}, os atributos mais importantes pa
 
 Para melhor avaliar o desempenho dos modelos de aprendizagem de máquina, foi utilizada a técnica de validação cruzada \cite{cross-validation}. Esta tecnica produzio dados mais fiáveis, mas nada relevantes pois os resultados foram muito semelhantes aos resultados da validação normal.
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{l l}
   \toprule
   Modelo & Accuracy \\
   \midrule
-  SVM & 91.85\% \\=
-  Arvore de Decisão & 92.52\% \\=
+  SVM & 91.85\% \\
+  Arvore de Decisão & 92.52\% \\
   Floresta Aleatória & 95.03\% \\
   \bottomrule
   \end{tabular}
@@ -297,11 +297,11 @@ Para chegar a conclusões mais profundas sobre o conjunto de dados, foi realizad
 
 Foi feito um \textit{detour} para poder usar o \textit{Elbow Method} \cite{elbow-method} para determinar o número de agrupamentos. O \textit{Elbow Method} \cite{elbow-method} é um método que permite determinar o número de agrupamentos, através da análise do \textit{Within-Cluster Sum of Squares} (WSS) \cite{wss}. O número de agrupamentos foi determinado através da análise do gráfico da WSS, que está disposto na figura\ref{fig:wss}.
 
-\begin{figure}[ht]
+\begin{figure}[hbt!]
   \centering
   \begin{minipage}
     {\linewidth}
-    \includegraphics[width=\linewidth]{images/wss.jpg}
+    \includegraphics[width=0.9\linewidth]{images/wss.jpg}
   \end{minipage}
   \caption{Within-Cluster Sum of Squares}
   \label{fig:wss}
@@ -317,18 +317,18 @@ Voltando à ferramenta de análise de agrupamentos, foi utilizado o algoritmo K-
 
 Quando o K-Means \cite{kmeans} foi executado, foram criados 6 agrupamentos, e estes agrupamentos foram analisados. Os agrupamentos estão dispostos na tabela\ref{tab:clusters}.
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{l c c c c c c c c}
   \toprule
-  Cluster & Avg Age & Avg Height & Avg Weight & Avg FCVC & Avg NCP & Avg CH2O & Avg FAF & Avg TUE \\
+  Cluster & Idade   & Altura     & Peso       & FCVC     & NCP     & CH2O     & FAF     & TUE  \\
   \midrule
-  0       & 21.58   & 1.62       & 69.54      & 2.38     & 1.16    & 1.91     & 0.66    & 0.68    \\
-  1       & 36.80   & 1.67       & 85.10      & 2.42     & 2.53    & 1.78     & 0.95    & 0.23    \\
-  2       & 20.61   & 1.65       & 63.77      & 2.23     & 3.09    & 1.68     & 0.87    & 0.82    \\
-  3       & 25.30   & 1.80       & 106.95     & 2.17     & 2.77    & 2.13     & 0.84    & 0.62    \\
-  4       & 20.75   & 1.76       & 73.29      & 2.45     & 3.10    & 2.37     & 2.14    & 0.88    \\
-  5       & 23.46   & 1.69       & 119.69     & 2.99     & 3.00    & 2.22     & 0.67    & 0.61    \\
+  0       & 21.58   & 1.62       & 69.54      & 2.38     & 1.16    & 1.91     & 0.66    & 0.68 \\
+  1       & 36.80   & 1.67       & 85.10      & 2.42     & 2.53    & 1.78     & 0.95    & 0.23 \\
+  2       & 20.61   & 1.65       & 63.77      & 2.23     & 3.09    & 1.68     & 0.87    & 0.82 \\
+  3       & 25.30   & 1.80       & 106.95     & 2.17     & 2.77    & 2.13     & 0.84    & 0.62 \\
+  4       & 20.75   & 1.76       & 73.29      & 2.45     & 3.10    & 2.37     & 2.14    & 0.88 \\
+  5       & 23.46   & 1.69       & 119.69     & 2.99     & 3.00    & 2.22     & 0.67    & 0.61 \\
   \bottomrule
   \end{tabular}
   \caption{Características dos Agrupamentos}
@@ -341,7 +341,7 @@ Como podemos ver na tabela\ref{tab:clusters}, os agrupamentos são bastante dife
 
 Foi despertada a ideia de se criar pessoas virtuais (ou imaginárias), chamadas de \textit{estereótipos}, que representam cada agrupamento. Estes \textit{estereótipos} são pessoas hipotéticas que representam cada agrupamento, e que podem ser utilizadas para entender cada situação. Os \textit{estereótipos} estão dispostos na tabela\ref{tab:stereotypes}.
 
-\begin{table}[ht]
+\begin{table}[hbt!]
   \centering
   \begin{tabular}{p{0.1\linewidth} p{0.2\linewidth} p{0.2\linewidth} p{0.2\linewidth} p{0.2\linewidth}}
   \toprule
@@ -367,14 +367,14 @@ Para chegar a conclusões mais profundas sobre o conjunto de dados, foi realizad
 
 \subsection{Análise de Agrupamentos}
 
-Aqui coloca-se três imagens, as quais representam a comparação entre os agrupamentos e a dois dos atributos fisicos mais importantes, o peso e a idade e o atributo de estilo de vida mais importante, a frequência de atividade física.
+Aqui coloca-se três imagens, as quais representam a comparação entre os agrupamentos e a dois dos atributos fisicos o mais importante e o menos, o peso e a idade e o atributo de estilo de vida mais importante, a frequência de atividade física.
 
-\begin{figure}[ht]
+\begin{figure}[hbt!]
   \centering
   \begin{minipage} % two images side by side
     {\linewidth}
-    \includegraphics[width=0.5\linewidth]{images/cluster-weight.jpg}
-    \includegraphics[width=0.5\linewidth]{images/cluster-age.jpg}
+    \includegraphics[width=0.45\linewidth]{images/cluster-weight.jpg}
+    \includegraphics[width=0.45\linewidth]{images/cluster-age.jpg}
   \end{minipage}
   \caption{Comparação entre os Agrupamentos e o Peso e a Idade}
   \label{fig:cluster-weight-age}
@@ -382,21 +382,19 @@ Aqui coloca-se três imagens, as quais representam a comparação entre os agrup
   \centering
   \begin{minipage}
     {\linewidth}
-    \includegraphics[width=\linewidth]{images/cluster-faf.jpg}
+    \includegraphics[width=0.9\linewidth]{images/cluster-faf.jpg}
   \end{minipage}
   \caption{Comparação entre os Agrupamentos e a Frequência de Atividade Física}
   \label{fig:cluster-faf}
 \end{figure}
 
-\subsection{Análise de Correlações}
+Aqui também se coloca o \textit{heatmap} das correlações entre os atributos do conjunto de dados.
 
-Aqui coloca-se to \textit{heatmap} das correlações entre os atributos do conjunto de dados.
-
-\begin{figure}[ht]
+\begin{figure}[hbt!]
   \centering
   \begin{minipage}
     {\linewidth}
-    \includegraphics[width=\linewidth]{images/heatmap.jpg}
+    \includegraphics[width=0.9\linewidth]{images/heatmap.jpg}
   \end{minipage}
   \caption{Heatmap das Correlações entre os Atributos}
   \label{fig:correlation-heatmap}
@@ -410,7 +408,7 @@ O mesmo se pode confirmar com o \textit{heatmap} das correlações entre os atri
 
 \subsubsection{Resumo das Principais Conclusões}
 
-Em suma podemos concluir que os atributos fisicos são mais importantes para a obesidade que os atributos de estilo de vida, e que os atributos fisicos têm uma correlação mais forte com a obesidade que os atributos de estilo de vida. No entanto, os atributos de estilo de vida também são importantes para a obesidade, e têm uma correlação forte com a obesidade.
+Em suma podemos concluir que os atributos fisicos são mais importantes para a obesidade que os atributos de estilo de vida, e que os atributos fisicos têm uma correlação mais forte com a obesidade que os atributos de estilo de vida. No entanto, os atributos de estilo de vida também são importantes para a obesidade, e têm uma correlação forte com a obesidade e a idade é o atributo menos importante para a obesidade.
 
 \section{Discussão}
 \subsection{Interpretação dos Resultados}
